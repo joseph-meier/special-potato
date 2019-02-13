@@ -1,66 +1,56 @@
 .wrapper {
+  display: flex;
   justify-content: center;
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 10%;
   border-style: none;
-}
-
-.title {
-  font-family: 'dejavu_sans_monobook';
-
-  display: flex;
-  color: blue;
-  justify-content: flex-start;
-  font-size: 1.2em;
-}
-
-.description {
-  font-family: 'dejavu_sans_monobook';
-
-  display: flex;
-  justify-content: flex-start;
-  font-size: 2.6em;
-  margin-right: 5%
-}
-
-.end-matter {
-  font-family: 'dejavu_sans_monobook';
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: row-wrap;
-}
-
-#social {
-  padding-left: 100px;
-  font-family: 'dejavu_sans_monobook';
-  transition: transform 300ms;
-}
-
-#social a {
-  text-decoration: none;
-}
-
-#social:hover {
-    transform: skew(-20deg)
-}
-
-#contact {
-  padding-right: 100px;
-  font-family: 'dejavu_sans_monobook';
-  transition: transform 300ms;
-}
-
-#contact:hover {
-  transform: skew(-20deg)
+  flex-direction: column;
+  
 }
 
 
-@font-face {
-    font-family: 'dejavu_sans_monobook';
-    src: url(/fonts/'dejavusansmono-webfont.woff2') format('woff2'),
-         url(/fonts/'dejavusansmono-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
+.scroll {
+ height: 50px;	
+ overflow: hidden;
+ position: relative;
+}
+.scroll h3 {
+ font-size: 3em;
+ color: limegreen;
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ line-height: 50px;
+ text-align: center;
+ /* Starting position */
+ -moz-transform:translateX(100%);
+ -webkit-transform:translateX(100%);	
+ transform:translateX(100%);
+ /* Apply animation to this element */	
+ -moz-animation: scroll 15s linear infinite;
+ -webkit-animation: scroll 15s linear infinite;
+ animation: scroll 15s linear infinite;
+}
+/* Move it (define the animation) */
+@-moz-keyframes scroll {
+ 0%   { -moz-transform: translateX(100%); }
+ 100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes scroll {
+ 0%   { -webkit-transform: translateX(100%); }
+ 100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes scroll {
+ 0%   { 
+ -moz-transform: translateX(100%); /* Firefox bug fix */
+ -webkit-transform: translateX(100%); /* Firefox bug fix */
+ transform: translateX(100%); 		
+ }
+ 100% { 
+ -moz-transform: translateX(-100%); /* Firefox bug fix */
+ -webkit-transform: translateX(-100%); /* Firefox bug fix */
+ transform: translateX(-100%); 
+ }
 }
